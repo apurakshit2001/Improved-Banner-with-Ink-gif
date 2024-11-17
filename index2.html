@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Auto-Play Banner</title>
+    <style>
+        @font-face {
+            font-family: 'HallowedGrounds';
+            src: url('./HallowedGrounds.otf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .banner .content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .banner .content .title {
+            font-family: HallowedGrounds;
+            font-size: 8rem;
+            margin: 0;
+            color: #ff8a00;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .banner .content span {
+            font-size: 1.5rem;
+            color: #fff;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: slideUp 2s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <!-- Background GIF -->
+        <img id="background-gif" src="./vd.gif" alt="Background Animation">
+        <div class="content">
+            <!-- Text Content -->
+            <p class="title">Arpan</p>
+            <span>I am a web developer</span>
+        </div>
+    </div>
+
+    <script>
+        // Ensure the GIF reloads every time the page is refreshed
+        const gif = document.getElementById('background-gif');
+        const timestamp = new Date().getTime();
+        gif.src = `./vd.gif?t=${timestamp}`;
+    </script>
+</body>
+
+</html>

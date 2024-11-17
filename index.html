@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Banner</title>
+    <style>
+        @font-face {
+            font-family: 'HallowedGrounds';
+            src: url('./HallowedGrounds.otf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('./banner.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+
+            /* Mask for cool effect */
+            mask-image: url('./vd.gif');
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            mask-position: center;
+
+            -webkit-mask-image: url('./vd.gif');
+            /* For WebKit browsers */
+            -webkit-mask-size: cover;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+
+            /* Dark overlay for readability */
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner .content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .banner .content .title {
+            font-family: HallowedGrounds;
+            font-size: 8rem;
+            margin: 0;
+            color: #ff8a00;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .banner .content span {
+            font-size: 1.5rem;
+            color: #fff;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: slideUp 2s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .description {
+            padding: 3rem 5%;
+            background: linear-gradient(180deg, #000000, #1c1c1c);
+            color: #e0e0e0;
+        }
+
+        .description-heading {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #ff8a00;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .description-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="content">
+            <p class="title">Arpan</p>
+            <span>I am a web developer</span>
+        </div>
+    </div>
+    <div class="description">
+        <h1 class="description-heading">This is a description of the website.</h1>
+        <p class="description-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit earum aperiam natus! Voluptas qui consequatur
+            harum, odit porro provident. Molestias adipisci cumque maiores voluptas nulla error natus numquam, nesciunt
+            laborum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magni aperiam asperiores? Error
+            cupiditate assumenda sint eveniet, odit alias vero dolores. Debitis nobis sit delectus quas natus, libero
+            sed provident. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia amet odio quam vitae ducimus
+            maxime, cumque aliquam porro debitis obcaecati maiores excepturi, iusto officia, eius sed nam assumenda
+            dicta. Eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iure dolorem optio repellendus
+            voluptatem magni ducimus consequatur, minima iusto quas amet debitis incidunt! Natus aspernatur fugit amet
+            doloribus? Earum, veritatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga vero ad sit fugit
+            accusantium aperiam porro voluptates, consectetur a exercitationem illum quos? Vero accusantium doloribus ad
+            ex ab est culpa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis, molestias facilis
+            quis, doloribus est soluta voluptatem blanditiis perferendis tenetur quo veniam, hic ut ea vitae. Dolorum
+            quia exercitationem molestiae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia amet odio quam
+            vitae ducimus maxime, cumque aliquam porro debitis obcaecati maiores excepturi, iusto officia, eius sed nam 
+            assumenda dicta. Eius! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam i
+        </p>
+    </div>
+</body>
+
+</html>
